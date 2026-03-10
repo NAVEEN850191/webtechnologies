@@ -1,0 +1,21 @@
+
+
+body{
+    background-color: lightblue;
+    font-family: Arial;
+}
+
+ul{
+    background-color: white;
+    width: 200px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+a{
+    text-decoration: none;
+    color: darkblue;
+    font-weight: bold;
+    margin: 10px;
+}
