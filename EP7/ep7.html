@@ -8,14 +8,13 @@ body{
     font-family: Arial, sans-serif;
     background: linear-gradient(to right, rgb(92, 61, 232), rgb(186, 109, 225));
     display:flex;
-    justify-content:center;
+    flex-direction:column;
     align-items:center;
-    height:90vh;
 }
 
 .container{
 width:70%;
-margin:auto;
+margin-top:30px;
 background:rgb(215, 229, 232);
 padding:20px;
 border-radius:10px;
@@ -31,17 +30,17 @@ border:1px solid gray;
 }
 
 button{
-background:#ccdee0;
+background:#55c5e4;
 color:white;
 cursor:pointer;
 }
 
 button:hover{
-background:#d0dee1;
+background:#2fa7c8;
 }
 
 table{
-width:75%;
+width:80%;
 margin:auto;
 border-collapse:collapse;
 margin-top:20px;
@@ -57,7 +56,7 @@ background:#55c5e4;
 color:white;
 }
 
-#result{
+#result,#total{
 margin-top:15px;
 font-weight:bold;
 color:green;
@@ -146,6 +145,64 @@ color:green;
 
 </div>
 
+
+<div class="container">
+
+<h2>Market Products</h2>
+
+<button onclick="totalPrice()">Total Price</button>
+
+<table id="productTable">
+
+<thead>
+<tr>
+<th>Product Name</th>
+<th>Price</th>
+<th>Category</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Laptop</td>
+<td>75000</td>
+<td>Electronics</td>
+</tr>
+
+<tr>
+<td>Smartphone</td>
+<td>30000</td>
+<td>Electronics</td>
+</tr>
+
+<tr>
+<td>Headphones</td>
+<td>2000</td>
+<td>Accessories</td>
+</tr>
+
+<tr>
+<td>Backpack</td>
+<td>1500</td>
+<td>Bags</td>
+</tr>
+
+<tr>
+<td>Smart Watch</td>
+<td>5000</td>
+<td>Electronics</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<p id="total"></p>
+
+</div>
+
+
 <script>
 
 const searchInput = document.getElementById("search");
@@ -186,7 +243,7 @@ function sortMarks(){
 let rows = Array.from(table.rows);
 
 rows.sort(function(a,b){
-return b.cells[1].textContent - a.cells[1].textContent;
+return parseInt(b.cells[1].textContent) - parseInt(a.cells[1].textContent);
 });
 
 rows.forEach(row => table.appendChild(row));
@@ -196,7 +253,7 @@ rows.forEach(row => table.appendChild(row));
 function maxmarks(){
 
 let rows = table.getElementsByTagName("tr");
-let max = -1;
+let max = -Infinity;
 let student = "";
 let course = "";
 
@@ -213,7 +270,27 @@ course = rows[i].cells[2].textContent;
 }
 
 document.getElementById("result").innerHTML =
-"Student with Maximum Marks: " + student + " | Marks: " + max + " | Course: " + course;
+"🏆 Student with Maximum Marks: " + student + " | Marks: " + max + " | Course: " + course;
+
+}
+
+
+function totalPrice(){
+
+let table = document.getElementById("productTable");
+let rows = table.getElementsByTagName("tr");
+
+let total = 0;
+
+for(let i=1;i<rows.length;i++){
+
+let price = parseInt(rows[i].cells[1].textContent);
+total = total + price;
+
+}
+
+document.getElementById("total").innerHTML =
+"Total Price of Products: ₹ " + total;
 
 }
 
