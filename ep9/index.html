@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ElectroMart | Home</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #eef2f7;
+}
+
+/* Navbar */
+nav {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00e6ff;
+}
+
+/* Hero Section */
+.hero {
+    height: 90vh;
+    background: url('https://static.vecteezy.com/system/resources/thumbnails/061/902/132/small/large-electronics-store-displaying-various-consumer-electronics-products-photo.jpg') no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+/* Button */
+.btn {
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    padding: 12px 20px;
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-top: 15px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+/* Categories */
+.categories {
+    padding: 40px;
+    text-align: center;
+}
+
+.categories h2 {
+    margin-bottom: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    height: 200px;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding: 15px;
+}
+
+/* Footer */
+footer {
+    background: #0f2027;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav>
+    <a href="index.html">Home</a>
+    <a href="products.php">Shop</a>
+    <a href="cart.php">Cart</a>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div>
+        <h1>⚡ ElectroMart</h1>
+        <p>Latest gadgets at the best prices</p>
+        <a href="products.php" class="btn">Shop Now</a>
+    </div>
+</section>
+
+<!-- Categories -->
+<section class="categories">
+    <h2>Shop by Category</h2>
+
+    <div class="grid">
+
+        <div class="card" style="background-image:url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8');">
+            <div class="overlay">
+                <h3>Laptops 💻</h3>
+            </div>
+        </div>
+
+        <div class="card" style="background-image:url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9');">
+            <div class="overlay">
+                <h3>Smartphones 📱</h3>
+            </div>
+        </div>
+
+        <div class="card" style="background-image:url('https://images.unsplash.com/photo-1518444065439-e933c06ce9cd');">
+            <div class="overlay">
+                <h3>Accessories 🎧</h3>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 ElectroMart | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
